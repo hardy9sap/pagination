@@ -11,6 +11,14 @@ def publisher_list(request):
     total_count = models.Publisher.objects.count()
     
     # 获取分页对象
+    # =========================================================================
+    # Pagination(current_page, total_count, base_url, per_page=10, max_show=11)
+    # current_page: 当前请求的页码
+    # total_count: 总数据量
+    # base_url: 请求的URL
+    # per_page: 每页显示的数据量，默认值为10
+    # max_show: 页面上最多显示多少个页码，默认值为11
+    # =========================================================================
     page_obj = Pagination(current_page, total_count, request.path_info)
     
     # =============================================
